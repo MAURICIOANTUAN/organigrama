@@ -1,16 +1,16 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Organigrama Cencosud</title>
-  <script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
+  <script src="https://cdn.balkangraph.com/js/latest/OrgChart.js"></script>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
     }
     #tree {
       width: 100%;
@@ -21,15 +21,17 @@
 <body>
   <div id="tree"></div>
   <script>
-    var chart = new OrgChart(document.getElementById("tree"), {
-      template: "olivia",
-      enableSearch: true,
-      nodeBinding: {
-        field_0: "name",
-        field_1: "title"
-      },
-      layout: OrgChart.orientation.left,
-      nodes: [
+    document.addEventListener("DOMContentLoaded", function () {
+      var chart = new OrgChart(document.getElementById("tree"), {
+        layout: OrgChart.orientation.left,
+        template: "tree",
+        enableSearch: true,
+        mouseScrool: OrgChart.action.zoom,
+        nodeBinding: {
+          field_0: "name",
+          field_1: "title"
+        },
+        nodes: [
   {
     "name": "Alexis Quezada",
     "children": [
@@ -2815,7 +2817,9 @@
     ]
   }
 ]
+      });
     });
   </script>
 </body>
 </html>
+
